@@ -13,7 +13,7 @@ This repository is a public learning notebook. Corrections, clearer explanations
 
 ## File conventions
 
-- Use lowercase kebab-case filenames. Conventional repository files such as `README.md`, `CONTRIBUTING.md`, `.gitignore`, GitHub templates, and license files are exceptions.
+- Use lowercase kebab-case filenames. Conventional repository files such as `README.md`, `CONTRIBUTING.md`, `.gitignore`, GitHub templates, license files, and Python modules/tests that follow `snake_case` conventions are exceptions.
 - Keep a diagram beside the note it explains when possible.
 - Put standalone code experiments in `labs/<topic>/` with reproduction instructions.
 - Use relative links for repository files and descriptive text for external links. Legal license text is exempt when it requires a canonical bare URL.
