@@ -16,7 +16,7 @@ Write the explanation in your own words before and after studying. Preserve impo
 
 ```mermaid
 flowchart LR
-    A[Input] --> B[Mechanism] --> C[Outcome]
+    input[Input] --> mechanism[Mechanism] --> outcome[Outcome]
 ```
 
 ## Experiment or example
@@ -43,4 +43,3 @@ Describe how someone can reproduce it, including environment, commands, expected
 ## Sources
 
 - Author or organization, “Title,” exact section if relevant, URL, accessed YYYY-MM-DD.
-

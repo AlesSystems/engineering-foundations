@@ -15,6 +15,8 @@ There are no overdue weeks. If life interrupts the cycle, resume the next unfini
 
 ## Schedule
 
+Unless a week explicitly says otherwise, its artifact follows the [topic note template](../templates/topic-note.md) and includes all four forms of evidence: an own-words explanation, a diagram, a practical experiment, and sourced conclusions with open questions.
+
 ### Week 1 — Bits, data representation, and digital logic
 
 **Questions:** How does physical state represent information? Why do integer overflow, floating-point error, endianness, and text encoding surprise programs?
@@ -23,7 +25,7 @@ There are no overdue weeks. If life interrupts the cycle, resume the next unfini
 
 **Lab:** encode and decode values by hand, observe overflow and floating-point behavior in a familiar language, then build or simulate a half-adder.
 
-**Artifact:** `hardware/data-representation-and-logic.md` with a gate-to-register diagram.
+**Artifact:** begin with the seeded [data representation and logic note](../hardware/data-representation-and-logic.md) and extend its gate-to-register diagram and [companion lab](../labs/data-representation/README.md).
 
 ### Week 2 — CPU, instruction sets, and the life of a program
 
@@ -136,4 +138,3 @@ There are no overdue weeks. If life interrupts the cycle, resume the next unfini
 ## Completion signal
 
 The cycle is complete when you can explain the end-to-end request without relying on vocabulary you cannot define. Unfinished subtopics move into the roadmap; they do not block completion.
-
