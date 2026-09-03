@@ -16,21 +16,7 @@ This is not an exam syllabus or a race. It is a place to turn study into durable
 
 ## Knowledge map
 
-```mermaid
-flowchart LR
-    HW[Hardware] --> OS[Operating systems]
-    OS --> NET[Networks]
-    OS --> DATA[Storage & databases]
-    NET --> DIST[Distributed systems]
-    DATA --> DIST
-    DIST --> OPS[Operations & reliability]
-    SEC[Security] --> OS
-    SEC --> NET
-    SEC --> DIST
-    CS[Software & CS theory] --> DIST
-    CS --> AGENT[Agentic engineering]
-    OPS --> AGENT
-```
+The [learning dependency map](diagrams/learning-dependency-map.html) shows how the curriculum builds from hardware toward reliable and agentic systems. Its standalone HTML/SVG source is the authoritative visual; keeping one source prevents the map from drifting across formats.
 
 ## Repository map
 
@@ -48,7 +34,7 @@ flowchart LR
 | `resources/` | Curated books, courses, papers, and documentation |
 | `templates/` | Repeatable note, lab, and cycle-review formats |
 
-Prefer Mermaid inside Markdown for editable diagrams. Use SVG or PNG only when Mermaid is insufficient, and keep the editable source beside exported images.
+Use the repository's `$diagram-design` workflow for durable diagrams. Keep self-contained HTML/SVG source beside the note it explains; reserve Mermaid for temporary working sketches that will not remain as study evidence. Create PNG or SVG exports only when a consumer requires them.
 
 ## Learning rule
 

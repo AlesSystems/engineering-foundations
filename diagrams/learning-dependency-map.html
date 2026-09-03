@@ -4,33 +4,33 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Engineering foundations learning dependencies</title>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
   <style>
     :root { color-scheme: light; }
     * { box-sizing: border-box; }
     body { margin: 0; background: #f5f5f5; color: #2d3142; font-family: Geist, sans-serif; }
-    main { width: min(100%, 960px); margin: 0 auto; padding: 32px 24px 40px; }
-    .eyebrow { margin: 0 0 8px; color: #7a8399; font: 500 8px/1 Geist Mono, monospace; letter-spacing: .18em; text-transform: uppercase; }
+    main { width: min(100%, 1008px); margin: 0 auto; padding: 32px 24px 40px; }
+    .eyebrow { margin: 0 0 8px; color: #7a8399; font: 500 8px/1 "Geist Mono", monospace; letter-spacing: .16em; text-transform: uppercase; }
     h1 { margin: 0; font: 400 32px/1.1 "Instrument Serif", serif; }
-    .subtitle { max-width: 680px; margin: 12px 0 24px; color: #4f5d75; font-size: 14px; line-height: 1.5; }
+    .subtitle { max-width: 720px; margin: 12px 0 24px; color: #4f5d75; font-size: 16px; line-height: 1.5; }
     figure { margin: 0; overflow-x: auto; }
     svg { display: block; width: 100%; min-width: 720px; height: auto; }
-    figcaption { margin-top: 12px; color: #4f5d75; font-size: 12px; line-height: 1.5; }
-    footer { margin-top: 24px; padding-top: 12px; border-top: 1px solid rgba(45,49,66,.12); color: #7a8399; font: 400 8px/1.5 Geist Mono, monospace; letter-spacing: .08em; text-transform: uppercase; }
+    figcaption { max-width: 760px; margin-top: 12px; color: #4f5d75; font-size: 12px; line-height: 1.5; }
+    footer { margin-top: 24px; padding-top: 12px; border-top: 1px solid rgba(45,49,66,.12); color: #7a8399; font: 400 8px/1.5 "Geist Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
   </style>
 </head>
 <body>
 <main>
   <header>
-    <p class="eyebrow">Cycle 1 · systems foundations</p>
+    <p class="eyebrow">Cycle 1 · dependency graph</p>
     <h1>Build upward from the machine</h1>
-    <p class="subtitle">The first cycle follows prerequisites into a networked service. Security applies across every layer; agentic engineering builds on the resulting software and operational judgment.</p>
+    <p class="subtitle">The curriculum follows converging prerequisites toward reliable systems. Distributed systems is the hinge: networking, data, security, and software theory meet there.</p>
   </header>
 
   <figure>
-    <svg viewBox="0 0 912 648" role="img" aria-labelledby="learning-map-title learning-map-desc">
-      <title id="learning-map-title">Engineering foundations learning dependencies</title>
-      <desc id="learning-map-desc">A dependency graph showing hardware leading to operating systems, then networking and data systems, converging on distributed systems and operations before agentic engineering.</desc>
+    <svg viewBox="0 0 960 600" role="img" aria-labelledby="learning-dependency-map-title learning-dependency-map-desc">
+      <title id="learning-dependency-map-title">Engineering foundations learning dependencies</title>
+      <desc id="learning-dependency-map-desc">Dependency graph showing hardware and security feeding operating systems; networking, storage, security, and software theory converging on distributed systems; and software theory and operations leading to agentic engineering.</desc>
       <defs>
         <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
           <polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/>
@@ -42,96 +42,117 @@
           <polygon points="0 0, 8 3, 0 6" fill="#2e5aa8"/>
         </marker>
       </defs>
-      <rect width="912" height="648" fill="#f5f5f5"/>
+      <rect width="960" height="600" fill="#f5f5f5"/>
 
-      <!-- Connectors are painted before nodes. -->
+      <!-- Prerequisites are painted before nodes so every node remains legible. -->
       <g fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)">
-        <path d="M456 104 V168"/>
-        <path d="M420 224 V256 Q420 264 412 264 H248 Q240 264 240 272 V304"/>
-        <path d="M492 224 V256 Q492 264 500 264 H664 Q672 264 672 272 V304"/>
-        <path d="M204 360 V392 Q204 400 212 400 H420 Q428 400 428 408 V440"/>
-        <path d="M672 360 V392 Q672 400 664 400 H492 Q484 400 484 408 V440"/>
-        <path d="M456 496 V560"/>
+        <path d="M160 96 V120 Q160 128 168 128 H208 Q216 128 216 136 V160"/>
+        <path d="M400 56 H344 Q336 56 336 64 V136 Q336 144 328 144 H280 Q272 144 272 152 V160"/>
+        <path d="M400 72 H360 Q352 72 352 80 V224 Q352 232 344 232 H280 a8,8 0 0,0 -16,0 H216 a8,8 0 0,0 -16,0 H144 Q136 232 136 240 V280"/>
+        <path d="M480 96 V104 Q480 112 488 112 H528 Q536 112 536 120 V360 a8,8 0 0,0 0,16 V408 Q536 416 528 416 H520"/>
+        <path d="M208 216 V240 Q208 248 200 248 H168 Q160 248 160 256 V280"/>
+        <path d="M272 216 V232 Q272 240 280 240 H392 Q400 240 400 248 V280"/>
+        <path d="M176 336 V352 Q176 360 184 360 H384 Q392 360 392 368 V400"/>
+        <path d="M416 336 V400"/>
+        <path d="M720 72 H688 Q680 72 680 80 V360 Q680 368 672 368 H472 Q464 368 464 376 V400"/>
+        <path d="M816 96 V400"/>
+        <path d="M520 440 H560"/>
+        <path d="M720 440 H760"/>
       </g>
 
-      <!-- Cross-cutting security links use distinct attach points and dashed strokes. -->
-      <g fill="none" stroke="#eb6c36" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#arrow-accent)">
-        <path d="M160 104 V128 Q160 136 168 136 H388 Q396 136 396 144 V168"/>
-        <path d="M124 104 V408 Q124 416 132 416 H400 Q408 416 408 424 V440"/>
-      </g>
-
-      <!-- Hardware -->
+      <!-- Rank 0: independent foundations. -->
       <g>
-        <rect x="376" y="48" width="160" height="56" rx="6" fill="#ffffff" stroke="#2d3142"/>
-        <text x="456" y="80" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Hardware</text>
-        <rect x="500" y="56" width="28" height="12" rx="2" fill="#f5f5f5" stroke="rgba(45,49,66,.4)" stroke-width=".8"/>
-        <text x="514" y="65" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">1 in</text>
+        <rect x="80" y="40" width="160" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="80" y="40" width="160" height="56" rx="6" fill="#ffffff" stroke="#2d3142"/>
+        <rect x="192" y="48" width="40" height="16" rx="2" fill="#f5f5f5" stroke="rgba(45,49,66,.4)" stroke-width=".8"/>
+        <text x="212" y="60" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">0 IN</text>
+        <text x="160" y="76" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Hardware</text>
       </g>
 
-      <!-- Security -->
       <g>
-        <rect x="80" y="48" width="160" height="56" rx="6" fill="rgba(235,108,54,.05)" stroke="rgba(235,108,54,.5)" stroke-dasharray="4,4"/>
-        <text x="160" y="80" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Security</text>
-        <rect x="204" y="56" width="28" height="12" rx="2" fill="#f5f5f5" stroke="rgba(235,108,54,.5)" stroke-width=".8"/>
-        <text x="218" y="65" fill="#eb6c36" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">2 in</text>
+        <rect x="400" y="40" width="160" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="400" y="40" width="160" height="56" rx="6" fill="#ffffff" stroke="#2d3142"/>
+        <rect x="512" y="48" width="40" height="16" rx="2" fill="#f5f5f5" stroke="rgba(45,49,66,.4)" stroke-width=".8"/>
+        <text x="532" y="60" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">0 IN</text>
+        <text x="480" y="76" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Security</text>
       </g>
 
-      <!-- Operating systems -->
       <g>
-        <rect x="376" y="168" width="160" height="56" rx="6" fill="#ffffff" stroke="#2d3142"/>
-        <text x="456" y="200" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Operating systems</text>
-        <rect x="500" y="176" width="28" height="12" rx="2" fill="#f5f5f5" stroke="rgba(45,49,66,.4)" stroke-width=".8"/>
-        <text x="514" y="185" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">2 in</text>
+        <rect x="720" y="40" width="160" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="720" y="40" width="160" height="56" rx="6" fill="#ffffff" stroke="#2d3142"/>
+        <rect x="832" y="48" width="40" height="16" rx="2" fill="#f5f5f5" stroke="rgba(45,49,66,.4)" stroke-width=".8"/>
+        <text x="852" y="60" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">0 IN</text>
+        <text x="800" y="76" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Software &amp; CS theory</text>
       </g>
 
-      <!-- Networking -->
+      <!-- Rank 1: the machine boundary. -->
       <g>
-        <rect x="124" y="304" width="160" height="56" rx="6" fill="#ffffff" stroke="#2d3142"/>
-        <text x="204" y="336" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Networking</text>
-        <rect x="248" y="312" width="28" height="12" rx="2" fill="#f5f5f5" stroke="rgba(45,49,66,.4)" stroke-width=".8"/>
-        <text x="262" y="321" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">1 in</text>
+        <rect x="160" y="160" width="160" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="160" y="160" width="160" height="56" rx="6" fill="#ffffff" stroke="#2d3142"/>
+        <rect x="272" y="168" width="40" height="16" rx="2" fill="#f5f5f5" stroke="rgba(45,49,66,.4)" stroke-width=".8"/>
+        <text x="292" y="180" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">2 IN</text>
+        <text x="240" y="196" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Operating systems</text>
       </g>
 
-      <!-- Data systems -->
+      <!-- Rank 2: system capabilities. -->
       <g>
-        <rect x="628" y="304" width="160" height="56" rx="6" fill="#ffffff" stroke="#2d3142"/>
-        <text x="708" y="336" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Storage &amp; databases</text>
-        <rect x="752" y="312" width="28" height="12" rx="2" fill="#f5f5f5" stroke="rgba(45,49,66,.4)" stroke-width=".8"/>
-        <text x="766" y="321" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">1 in</text>
+        <rect x="80" y="280" width="160" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="80" y="280" width="160" height="56" rx="6" fill="#ffffff" stroke="#2d3142"/>
+        <rect x="192" y="288" width="40" height="16" rx="2" fill="#f5f5f5" stroke="rgba(45,49,66,.4)" stroke-width=".8"/>
+        <text x="212" y="300" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">2 IN</text>
+        <text x="160" y="316" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Networking</text>
       </g>
 
-      <!-- Distributed systems -->
       <g>
-        <rect x="376" y="440" width="160" height="56" rx="6" fill="rgba(45,49,66,.05)" stroke="#4f5d75"/>
-        <text x="456" y="472" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Distributed systems</text>
-        <rect x="500" y="448" width="28" height="12" rx="2" fill="#f5f5f5" stroke="rgba(79,93,117,.5)" stroke-width=".8"/>
-        <text x="514" y="457" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">3 in</text>
+        <rect x="320" y="280" width="160" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="320" y="280" width="160" height="56" rx="6" fill="#ffffff" stroke="#2d3142"/>
+        <rect x="432" y="288" width="40" height="16" rx="2" fill="#f5f5f5" stroke="rgba(45,49,66,.4)" stroke-width=".8"/>
+        <text x="452" y="300" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">1 IN</text>
+        <text x="400" y="316" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Storage &amp; databases</text>
       </g>
 
-      <!-- Operations -->
+      <!-- Rank 3: convergence and downstream practice. -->
       <g>
-        <rect x="376" y="560" width="160" height="56" rx="6" fill="rgba(45,49,66,.05)" stroke="#4f5d75"/>
-        <text x="456" y="592" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Operations &amp; reliability</text>
-        <rect x="500" y="568" width="28" height="12" rx="2" fill="#f5f5f5" stroke="rgba(79,93,117,.5)" stroke-width=".8"/>
-        <text x="514" y="577" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">1 in</text>
+        <rect x="360" y="400" width="160" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="360" y="400" width="160" height="56" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1.2"/>
+        <rect x="472" y="408" width="40" height="16" rx="2" fill="#2d3142" stroke="#2d3142" stroke-width=".8"/>
+        <text x="492" y="420" fill="#ffffff" font-family="Geist Mono, monospace" font-size="8" font-weight="600" text-anchor="middle">4 IN</text>
+        <text x="440" y="436" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Distributed systems</text>
       </g>
 
-      <!-- Agentic engineering is deliberately a later cycle. -->
-      <g opacity=".72">
-        <rect x="672" y="560" width="160" height="56" rx="6" fill="rgba(45,49,66,.02)" stroke="rgba(45,49,66,.2)" stroke-dasharray="4,3"/>
-        <text x="752" y="592" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Agentic engineering</text>
-        <text x="752" y="608" fill="#7a8399" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">LATER CYCLE</text>
+      <g>
+        <rect x="560" y="400" width="160" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="560" y="400" width="160" height="56" rx="6" fill="#ffffff" stroke="#2d3142"/>
+        <rect x="672" y="408" width="40" height="16" rx="2" fill="#f5f5f5" stroke="rgba(45,49,66,.4)" stroke-width=".8"/>
+        <text x="692" y="420" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">1 IN</text>
+        <text x="640" y="436" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Operations &amp; reliability</text>
       </g>
 
-      <line x1="32" y1="632" x2="880" y2="632" stroke="rgba(45,49,66,.12)" stroke-width=".8"/>
-      <text x="32" y="644" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" letter-spacing="1.2">SOLID · PREREQUISITE</text>
-      <line x1="220" y1="640" x2="260" y2="640" stroke="#eb6c36" stroke-width="1.2" stroke-dasharray="5,4"/>
-      <text x="272" y="644" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" letter-spacing="1.2">CROSS-CUTTING</text>
+      <g>
+        <rect x="760" y="400" width="160" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="760" y="400" width="160" height="56" rx="6" fill="rgba(45,49,66,.05)" stroke="#4f5d75"/>
+        <rect x="872" y="408" width="40" height="16" rx="2" fill="#f5f5f5" stroke="rgba(79,93,117,.5)" stroke-width=".8"/>
+        <text x="892" y="420" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">2 IN</text>
+        <text x="840" y="436" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Agentic engineering</text>
+      </g>
+
+      <!-- Legend sits outside the graph's active canvas. -->
+      <line x1="40" y1="540" x2="920" y2="540" stroke="rgba(45,49,66,.12)" stroke-width=".8"/>
+      <text x="40" y="560" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" letter-spacing="1.2">LEGEND</text>
+      <line x1="120" y1="556" x2="160" y2="556" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <text x="176" y="560" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" letter-spacing=".8">BUILDS TOWARD</text>
+      <rect x="320" y="548" width="24" height="16" rx="4" fill="#ffffff" stroke="#2d3142"/>
+      <text x="356" y="560" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" letter-spacing=".8">TOPIC</text>
+      <rect x="440" y="548" width="24" height="16" rx="4" fill="rgba(45,49,66,.05)" stroke="#4f5d75"/>
+      <text x="476" y="560" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" letter-spacing=".8">DOWNSTREAM LEAF</text>
+      <rect x="672" y="548" width="40" height="16" rx="2" fill="#2d3142"/>
+      <text x="692" y="560" fill="#ffffff" font-family="Geist Mono, monospace" font-size="8" font-weight="600" text-anchor="middle">4 IN</text>
+      <text x="724" y="560" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" letter-spacing=".8">PREREQUISITES</text>
     </svg>
-    <figcaption>Arrows show the recommended order for building mental models, not rigid prerequisites. The schedule may revisit any layer when an experiment exposes a gap.</figcaption>
+    <figcaption>Arrows express a recommended order for building mental models, not rigid prerequisites. The “in” badge counts the foundations feeding each topic; Distributed systems has the strongest convergence.</figcaption>
   </figure>
 
-  <footer>Engineering Foundations · editable HTML/SVG source</footer>
+  <footer>Engineering Foundations · diagram-design v2.6 · editable HTML/SVG source</footer>
 </main>
 </body>
 </html>

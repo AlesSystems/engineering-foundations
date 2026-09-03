@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How bit patterns acquire meaning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f5f5f5; color: #2d3142; font-family: Geist, sans-serif; }
+    main { width: min(100%, 1008px); margin: 0 auto; padding: 32px 24px 40px; }
+    .eyebrow { margin: 0 0 8px; color: #7a8399; font: 500 8px/1 "Geist Mono", monospace; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { margin: 0; font: 400 32px/1.1 "Instrument Serif", serif; }
+    .subtitle { max-width: 720px; margin: 12px 0 24px; color: #4f5d75; font-size: 16px; line-height: 1.5; }
+    figure { margin: 0; overflow-x: auto; }
+    svg { display: block; width: 100%; min-width: 720px; height: auto; }
+    figcaption { max-width: 760px; margin-top: 12px; color: #4f5d75; font-size: 12px; line-height: 1.5; }
+    footer { margin-top: 24px; padding-top: 12px; border-top: 1px solid rgba(45,49,66,.12); color: #7a8399; font: 400 8px/1.5 "Geist Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">Week 1 · dependency graph</p>
+    <h1>Bits carry state, not meaning</h1>
+    <p class="subtitle">A physical distinction becomes a bit pattern. Only a representation contract and its software or hardware context determine how that pattern should be interpreted.</p>
+  </header>
+
+  <figure>
+    <svg viewBox="0 0 960 600" role="img" aria-labelledby="representation-map-title representation-map-desc">
+      <title id="representation-map-title">How bit patterns acquire meaning</title>
+      <desc id="representation-map-desc">Dependency graph showing physical two-state signals becoming bits and bit patterns, which combine with representation rules to be interpreted as integers, floating-point values, encoded text, or CPU instructions.</desc>
+      <defs>
+        <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+          <polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/>
+        </marker>
+        <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+          <polygon points="0 0, 8 3, 0 6" fill="#eb6c36"/>
+        </marker>
+        <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+          <polygon points="0 0, 8 3, 0 6" fill="#2e5aa8"/>
+        </marker>
+      </defs>
+      <rect width="960" height="600" fill="#f5f5f5"/>
+
+      <!-- Dependencies are painted first. -->
+      <g fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)">
+        <path d="M160 96 V160"/>
+        <path d="M160 216 V280"/>
+        <path d="M240 308 H320"/>
+        <path d="M640 96 V240 Q640 248 632 248 H448 Q440 248 440 256 V280"/>
+        <path d="M352 336 V344 Q352 352 344 352 H128 Q120 352 120 360 V400"/>
+        <path d="M384 336 V360 Q384 368 376 368 H368 Q360 368 360 376 V400"/>
+        <path d="M416 336 V360 Q416 368 424 368 H592 Q600 368 600 376 V400"/>
+        <path d="M448 336 V344 Q448 352 456 352 H832 Q840 352 840 360 V400"/>
+      </g>
+
+      <!-- Rank 0: state and contract. -->
+      <g>
+        <rect x="80" y="40" width="160" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="80" y="40" width="160" height="56" rx="6" fill="#ffffff" stroke="#2d3142"/>
+        <rect x="192" y="48" width="40" height="16" rx="2" fill="#f5f5f5" stroke="rgba(45,49,66,.4)" stroke-width=".8"/>
+        <text x="212" y="60" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">0 IN</text>
+        <text x="160" y="76" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Physical two-state signal</text>
+      </g>
+
+      <g>
+        <rect x="560" y="40" width="160" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="560" y="40" width="160" height="56" rx="6" fill="#ffffff" stroke="#2d3142"/>
+        <rect x="672" y="48" width="40" height="16" rx="2" fill="#f5f5f5" stroke="rgba(45,49,66,.4)" stroke-width=".8"/>
+        <text x="692" y="60" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">0 IN</text>
+        <text x="640" y="76" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Representation rules</text>
+      </g>
+
+      <!-- Rank 1: one unit of state. -->
+      <g>
+        <rect x="80" y="160" width="160" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="80" y="160" width="160" height="56" rx="6" fill="#ffffff" stroke="#2d3142"/>
+        <rect x="192" y="168" width="40" height="16" rx="2" fill="#f5f5f5" stroke="rgba(45,49,66,.4)" stroke-width=".8"/>
+        <text x="212" y="180" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">1 IN</text>
+        <text x="160" y="196" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Bit</text>
+      </g>
+
+      <!-- Rank 2: pattern plus context. -->
+      <g>
+        <rect x="80" y="280" width="160" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="80" y="280" width="160" height="56" rx="6" fill="#ffffff" stroke="#2d3142"/>
+        <rect x="192" y="288" width="40" height="16" rx="2" fill="#f5f5f5" stroke="rgba(45,49,66,.4)" stroke-width=".8"/>
+        <text x="212" y="300" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">1 IN</text>
+        <text x="160" y="316" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Bit pattern</text>
+      </g>
+
+      <g>
+        <rect x="320" y="280" width="160" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="320" y="280" width="160" height="56" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1.2"/>
+        <rect x="432" y="288" width="40" height="16" rx="2" fill="#2d3142"/>
+        <text x="452" y="300" fill="#ffffff" font-family="Geist Mono, monospace" font-size="8" font-weight="600" text-anchor="middle">2 IN</text>
+        <text x="400" y="316" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Interpretation</text>
+      </g>
+
+      <!-- Rank 3: possible meanings. -->
+      <g>
+        <rect x="40" y="400" width="160" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="40" y="400" width="160" height="56" rx="6" fill="rgba(45,49,66,.05)" stroke="#4f5d75"/>
+        <rect x="152" y="408" width="40" height="16" rx="2" fill="#f5f5f5" stroke="rgba(79,93,117,.5)" stroke-width=".8"/>
+        <text x="172" y="420" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">1 IN</text>
+        <text x="120" y="436" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Integer</text>
+      </g>
+
+      <g>
+        <rect x="280" y="400" width="160" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="280" y="400" width="160" height="56" rx="6" fill="rgba(45,49,66,.05)" stroke="#4f5d75"/>
+        <rect x="392" y="408" width="40" height="16" rx="2" fill="#f5f5f5" stroke="rgba(79,93,117,.5)" stroke-width=".8"/>
+        <text x="412" y="420" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">1 IN</text>
+        <text x="360" y="436" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Floating point</text>
+      </g>
+
+      <g>
+        <rect x="520" y="400" width="160" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="520" y="400" width="160" height="56" rx="6" fill="rgba(45,49,66,.05)" stroke="#4f5d75"/>
+        <rect x="632" y="408" width="40" height="16" rx="2" fill="#f5f5f5" stroke="rgba(79,93,117,.5)" stroke-width=".8"/>
+        <text x="652" y="420" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">1 IN</text>
+        <text x="600" y="436" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Encoded text</text>
+      </g>
+
+      <g>
+        <rect x="760" y="400" width="160" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="760" y="400" width="160" height="56" rx="6" fill="rgba(45,49,66,.05)" stroke="#4f5d75"/>
+        <rect x="872" y="408" width="40" height="16" rx="2" fill="#f5f5f5" stroke="rgba(79,93,117,.5)" stroke-width=".8"/>
+        <text x="892" y="420" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" text-anchor="middle">1 IN</text>
+        <text x="840" y="436" fill="#2d3142" font-family="Geist, sans-serif" font-size="12" font-weight="600" text-anchor="middle">CPU instruction</text>
+      </g>
+
+      <line x1="40" y1="540" x2="920" y2="540" stroke="rgba(45,49,66,.12)" stroke-width=".8"/>
+      <text x="40" y="560" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" letter-spacing="1.2">LEGEND</text>
+      <line x1="120" y1="556" x2="160" y2="556" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <text x="176" y="560" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" letter-spacing=".8">BUILDS TOWARD</text>
+      <rect x="304" y="548" width="24" height="16" rx="4" fill="#ffffff" stroke="#2d3142"/>
+      <text x="340" y="560" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" letter-spacing=".8">CONCEPT</text>
+      <rect x="456" y="548" width="24" height="16" rx="4" fill="rgba(45,49,66,.05)" stroke="#4f5d75"/>
+      <text x="492" y="560" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" letter-spacing=".8">POSSIBLE MEANING</text>
+      <rect x="720" y="548" width="40" height="16" rx="2" fill="#2d3142"/>
+      <text x="740" y="560" fill="#ffffff" font-family="Geist Mono, monospace" font-size="8" font-weight="600" text-anchor="middle">2 IN</text>
+      <text x="772" y="560" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="8" letter-spacing=".8">PREREQUISITES</text>
+    </svg>
+    <figcaption>The bits do not carry their type. The same pattern can take different meanings because the interpreting instruction, data type, or encoding supplies a representation contract.</figcaption>
+  </figure>
+
+  <footer>Engineering Foundations · diagram-design v2.6 · editable HTML/SVG source</footer>
+</main>
+</body>
+</html>

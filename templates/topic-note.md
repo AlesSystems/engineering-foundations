@@ -14,10 +14,7 @@ Write the explanation in your own words before and after studying. Preserve impo
 
 ## Diagram
 
-```mermaid
-flowchart LR
-    input[Input] --> mechanism[Mechanism] --> outcome[Outcome]
-```
+Invoke `$diagram-design`, create a self-contained HTML/SVG diagram beside this note, and link it here with a one-sentence description of the mental model it captures.
 
 ## Experiment or example
 
