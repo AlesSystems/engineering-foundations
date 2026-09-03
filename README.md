@@ -34,7 +34,7 @@ The [learning dependency map](diagrams/learning-dependency-map.html) shows how t
 | `resources/` | Curated books, courses, papers, and documentation |
 | `templates/` | Repeatable note, lab, and cycle-review formats |
 
-Use the repository's `$diagram-design` workflow for diagrams that benefit from editorial layout. Keep the self-contained HTML/SVG source beside the note it explains; reserve Mermaid for quick working sketches and create PNG or SVG exports only when a consumer requires them.
+Use the repository's `$diagram-design` workflow for standalone diagrams and visuals that benefit from editorial layout. Keep self-contained HTML/SVG source beside the note it explains; Mermaid remains appropriate for simple, note-local diagrams that render clearly without manual layout. Create PNG or SVG exports only when a consumer requires them.
 
 ## Learning rule
 
