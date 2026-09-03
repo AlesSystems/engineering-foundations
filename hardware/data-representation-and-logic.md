@@ -21,17 +21,7 @@ Text encoding is another agreement. Unicode assigns code points to characters, w
 
 ## Diagram
 
-```mermaid
-flowchart LR
-    physical[Physical two-state signal] --> bit[Bit]
-    bit --> pattern[Bit pattern]
-    rules[Representation rules] --> interpretation{Interpretation}
-    pattern --> interpretation
-    interpretation --> integer[Integer]
-    interpretation --> float[Floating point]
-    interpretation --> text[Encoded text]
-    interpretation --> instruction[CPU instruction]
-```
+The [representation dependency map](data-representation-dependency-map.html) shows how physical state becomes bits and how representation rules give the same bit pattern different meanings.
 
 Combinational gates calculate outputs from current inputs. Feedback and a clock allow state elements to retain a value, which turns logic into memory. Registers combine state elements; CPUs combine registers, arithmetic logic, control, and connections to memory.
 
@@ -65,4 +55,3 @@ Run the [data-representation lab](../labs/data-representation/README.md). It com
 - Nisan and Schocken, [Nand2Tetris, Part I](https://www.nand2tetris.org/course), hardware chapters and projects, accessed 2026-09-02.
 - IEEE, [IEEE 754-2019: Standard for Floating-Point Arithmetic](https://standards.ieee.org/ieee/754/6210/), overview, accessed 2026-09-02.
 - Unicode Consortium, [Unicode Standard: Technical Introduction](https://www.unicode.org/standard/principles.html), accessed 2026-09-02.
-

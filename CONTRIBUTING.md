@@ -22,7 +22,7 @@ This repository is a public learning notebook. Corrections, clearer explanations
 
 - Invoke `$diagram-design` before creating or substantially revising a diagram.
 - Choose the semantic pattern and visual type before drawing, and keep within that type's complexity budget.
-- Store standalone or editorial diagrams as self-contained HTML with inline SVG. Mermaid remains appropriate for simple, note-local diagrams that render clearly without manual layout.
+- Store durable diagrams as self-contained HTML with inline SVG. Mermaid is appropriate only for temporary working sketches that will not remain as study evidence.
 - Give every meaningful SVG a first-child `<title>`, a useful `<desc>`, and resolving `role="img"` and `aria-labelledby` attributes.
 - Run `python3 ~/agent-library/skills/craft/diagram-design/scripts/self_check.py <diagram.html>` plus any type-specific verifier provided by the selected skill version, then inspect the result at desktop and narrow widths.
 - Do not commit PNG or standalone SVG exports unless a named consumer needs them; HTML remains the source of truth.
